@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<div class="container">
+		{{form_start(form)}}
+		<div class="row_md_4">
+			{{form_row(form.reference)}}
+		</div>
+		<div class="row_md_4">
+			{{form_row(form.nomcategorie)}}
+		</div>
+		<div class="row_md_4">
+			{{form_row(form.prix)}}
+		</div>
+		<button class="btn btn-primary">
+			Enregistrer</button>
+		{{form_end(form)}}
+	</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/">Crud</a>
+
+				<h2 class="text-warning">Bienvenue
+					{{app.user.username}}
+
+				</h2>
+				<a href="{{path("ajouter")}}">
+					<button class="btn btn-success">+</button>
+				</a>
+			</div>
+		</nav>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Référence</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Prix</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			{%for categori in category %}
+
+
+				<tbody>
+					<tr class="table-primary">
+						<th scope="row">{{categori.id}}</th>
+						<td>{{categori.reference}}</td>
+						<td>{{categori.nomCategorie}}</td>
+						<td>{{categori.prix}}</td>
+						<td>
+							<a href="{{path('vue',{id:categori.id})}}">
+								<button class="btn btn-warning">vue</button>
+							</a>
+							<a href="{{path('maj',{id:categori.id})}}">
+								<button class="btn btn-success">update</button>
+							</a>
+							<form method="post" action="{{path('delete',{id:categori.id})}}" style="display:inline-block;">
+								<button class="btn btn-danger" onclick='return confirm(" voulez vous supprimer") '>delete</button>
+							</form>
+
+
+						</td>
+					</tr>
+
+				</tbody>
+
+			{% endfor %}
+		</table>
+
+
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+		</div>
+
+
+	</div>
+{% endblock %}

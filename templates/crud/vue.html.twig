@@ -1,0 +1,30 @@
+{% extends "base.html.twig"%}
+{% block body %}
+	<div class="container">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col" _msthash="2586857" _msttexthash="46462">Catégorie En question</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="table-primary">
+					<th scope="row" _msthash="2595125" _msttexthash="113490">réf :</th>
+					<td _msthash="2594839" _msttexthash="383591">{{repo.reference}}</td>
+				</tr>
+				<tr class="table-primary">
+					<th scope="row" _msthash="2595125" _msttexthash="113490">Nom Catégorie :</th>
+					<td _msthash="2594969" _msttexthash="383591">{{repo.nomcategorie}}</td>
+				</tr>
+				<tr class="table-primary">
+					<th scope="row" _msthash="2595125" _msttexthash="113490">Prix :</th>
+					<td _msthash="2595099" _msttexthash="383591">{{repo.prix}}</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<a href="/home">
+			<button class="btn btn-success">Retour</button>
+		</a>
+	</div>
+{% endblock %}
