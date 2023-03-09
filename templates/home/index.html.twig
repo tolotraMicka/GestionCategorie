@@ -5,14 +5,15 @@
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="/">Crud</a>
-
 				<h2 class="text-warning">Bienvenue
 					{{app.user.username}}
 
 				</h2>
-				<a href="{{path("ajouter")}}">
-					<button class="btn btn-success">+</button>
+				<a class="ajout" href="{{path("ajouter")}}">
+					<button class="fa fa-plus btn-success"></button>
+				</a>
+				<a href="{{path("security_logout")}}">
+					<button class="fa fa-sign-out btn-danger" ></button>
 				</a>
 			</div>
 		</nav>
